@@ -1,0 +1,54 @@
+🔍 Problem Statement:
+Classify sonar signal returns (60 features per sample) as either:
+
+"R" – Rock
+
+"M" – Mine
+
+📦 Data Handling:
+The dataset is read using pandas from a CSV file (without a header).
+
+Basic data exploration is done using describe() and groupby() to understand feature differences by label.
+
+🧹 Preprocessing:
+Features (x) are extracted by dropping the target column (column 60).
+
+Labels (y) are the values in column 60.
+
+✂️ Splitting the Data:
+Split into training (90%) and test (10%) sets using train_test_split.
+
+Stratification ensures both classes are proportionally represented.
+
+🤖 Model Training:
+Logistic Regression is used from sklearn.linear_model.
+
+Model is trained on the training set (X_train, Y_train).
+
+📊 Model Evaluation:
+Predictions made on both training and test sets.
+
+Accuracy is calculated using accuracy_score():
+
+python
+Copy
+Edit
+Accuracy on training data - 0.8347
+Accuracy on test data - 0.7619
+🧠 Predictive System:
+A new instance (a 60-feature input) is reshaped and passed to the model.
+
+The model predicts whether the object is "Rock" or "Mine".
+
+Outputs the result as:
+
+"The object is a rock" or
+
+"The object is mine"
+
+✅ Final Notes:
+This is a basic end-to-end classification pipeline.
+
+It uses logistic regression, which is a good baseline model.
+
+No feature scaling or model tuning is done here; this can be an area for improvement.
